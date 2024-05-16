@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join AAS Questionnaire</title>
+  <style>
+    /* Add your CSS styling here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .form-header {
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group.half-width {
+      display: inline-block;
+      width: 48%;
+      margin-right: 4%;
+    }
+    .form-group.half-width:last-child {
+      margin-right: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    textarea {
+      height: 100px;
+    }
+    .form-footer {
+      margin-top: 20px;
+    }
+    .form-footer input {
+      width: auto;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .form-footer input:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Join AAS Questionnaire</h2>
+    <p>Please fill out the questions below. Our team will be in touch soon!</p>
+
+    <form id="applicationForm">
+      <!-- Section 1 -->
+      <h3>Section 1 of 4: Join AAS Questionnaire</h3>
+      <div class="form-group half-width">
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div class="form-group half-width">
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="source">How did you learn about AAS? *</label>
+        <select id="source" name="source" required>
+          <option value="Referral">Referral</option>
+          <option value="USAJobs">USAJobs</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="AAS Reached out">AAS Reached out</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group" id="referrerGroup" style="display: none;">
+        <label for="referrer">List the GSA/AAS employee who referred you</label>
+        <input type="text" id="referrer" name="referrer">
+      </div>
+
+      <!-- Section 2 -->
+      <h3>Section 2 of 4: Current Candidate Information</h3>
+      <div class="form-group">
+        <label for="city">What city do you currently reside in? *</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="state">What state do you currently reside in? *</label>
+        <input type="text" id="state" name="state" required>
+      </div>
+      <div class="form-group">
+        <label for="clearance">Select your current Federal Clearance *</label>
+        <select id="clearance" name="clearance" required>
+          <option value="NS">NS (Non Secret)</option>
+          <option value="S">S (Secret)</option>
+          <option value="TS">TS (Top Secret)</option>
+          <option value="TS/SCI">TS/SCI (Top Secret/Sensitive Compartmented Information)</option>
+          <option value="TS/SCI Poly">TS/SCI Poly (Top Secret/Sensitive Compartmented Information with Polygraph)</option>
+          <option value="None">I do not hold a federal Security Clearance</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="federalEmployee">Are you currently a Federal employee/Contractor? *</label>
+        <select id="federalEmployee" name="federalEmployee" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="agency">What Federal Agency do you work for?</label>
+        <input type="text" id="agency" name="agency">
+      </div>
+      <div class="form-group">
+        <label for="position">What is your current Position? *</label>
+        <input type="text" id="position" name="position" required>
+      </div>
+      <div class="form-group">
+        <label for="certifications">List your current professional certifications *</label>
+        <input type="text" id="certifications" name="certifications" required>
+      </div>
+      <div class="form-group">
+        <label for="authorities">Select all federal hiring authorities you are currently eligible for *</label>
+        <select id="authorities" name="authorities" multiple required>
+          <option value="Federal Employee">Federal Employee</option>
+          <option value="Veteran">Veteran</option>
+          <option value="National Guard & Reserves">National Guard & Reserves</option>
+          <option value="Peace Corps & AmeriCorps VISTA">Peace Corps & AmeriCorps VISTA</option>
+          <option value="Military Spouse">Military Spouse</option>
+          <option value="Individuals with disabilities">Individuals with disabilities</option>
+          <option value="Jobs Open to the Public">Jobs Open to the Public</option>
+          <option value="None">I am not eligible for any federal hiring authorities</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Section 3 -->
+      <h3>Section 3 of 4: AAS Role Interest</h3>
+      <div class="form-group">
+        <label for="positions">What position(s)/role(s) at AAS are you interested in?</label>
+        <select id="positions" name="positions" multiple required>
+          <option value="CO">Contracting Officer (CO)</option>
+          <option value="CS">Contract Specialist (CS)</option>
+          <option value="APM">Acquisition Project Manager (APM)</option>
+          <option value="PM">Project Manager (PM)</option>
+          <option value="TPOC">Technical PM/Technical Point of Contact (TPOC)</option>
+          <option value="PA">Property Administrator (PA)</option>
+          <option value="OSO">Operations Support Office (OSO)</option>
+        </select>
+      </div>
+      <div class="form-group half-width">
+        <label for="firstChoice">First Choice *</label>
+        <input type="text" id="firstChoice" name="firstChoice" required>
+      </div>
+      <div class="form-group half-width">
+        <label for="secondChoice">Second Choice *</label>
+        <input type="text" id="secondChoice" name="secondChoice" required>
+      </div>
+      <div class="form-group">
+        <label for="grades">Select grade(s) you would like to be considered for *</label>
+        <select id="grades" name="grades" multiple required>
+          <option value="GS-7">GS - 7</option>
+          <option value="GS-9">GS - 9</option>
+          <option value="GS-11">GS - 11</option>
+          <option value="GS-12">GS - 12</option>
+          <option value="GS-13">GS - 13</option>
+          <option value="GS-14">GS - 14</option>
+        </select>
+      </div>
+
+      <!-- Section 4 -->
+      <h3>Section 4 of 4: Thank you</h3>
+      <div class="form-group">
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" name="comments"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-footer">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript for handling autocompletion and other interactions
+
+    // Show/Hide Referrer's Name field based on selection
+    document.getElementById('source').addEventListener('change', function() {
+      var referrerGroup = document.getElementById('referrerGroup');
+      if (this.value === 'Referral') {
+        referrerGroup.style.display = 'block';
+      } else {
+        referrerGroup.style.display = 'none';
+      }
+    });
+
+    // Autocomplete function for referrer's name
+    const referrerInput = document.getElementById('referrer');
+    const referrers = ['Referrer 1', 'Referrer 2', 'Referrer 3']; // Replace with your data source
+
+    referrerInput.addEventListener('input', function() {
+      let inputValue = this.value.toLowerCase();
+      let suggestions = referrers.filter(referrer => referrer.toLowerCase().includes(inputValue));
+      // Implement a dropdown to show suggestions (you may use a library like jQuery UI for autocompletion)
+    });
+
+    // Form submission handler
+    document.getElementById('applicationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Handle form submission, e.g., send data to a Google Sheet
+      const formData = new FormData(this);
+      fetch('/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        // Handle success (e.g., show a thank you message)
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle error
+      });
+    });
+  </script>
+</body>
+</html>
